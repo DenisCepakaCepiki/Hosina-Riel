@@ -43,26 +43,37 @@
 
       <h2>2. Information we collect or process</h2>
       <p>Depending on your interactions and the features enabled, Hosina may collect or process the following categories:</p>
-      <h3>2.1 Discord identifiers and registration information</h3>
+      <h3>2.1 Discord identifiers and member information</h3>
       <ul>
         <li>Discord User ID.</li>
         <li>Discord Server ID (Guild ID).</li>
+        <li>Discord username, display name, server nickname, and avatar URL.</li>
+        <li>Server member count (used in welcome messages).</li>
         <li>Information associated with user registration in Hosina, where registration is used.</li>
       </ul>
       <h3>2.2 Messages and command inputs</h3>
       <ul>
         <li>Commands and text submitted to Hosina.</li>
         <li>Message content needed to respond to commands or operate a requested feature.</li>
-        <li>Text or other inputs submitted for autoresponse, games, image tools, or other interactive features.</li>
+        <li>Text or other inputs submitted for autoresponse, AFK status, games, image tools, or other interactive features.</li>
       </ul>
+      <p>Hosina does not keep a log or archive of general chat messages. Message content that is not part of a command or feature is not saved.</p>
       <h3>2.3 Feature and server configuration</h3>
       <ul>
-        <li>Custom autoresponse entries and related configuration.</li>
+        <li>Custom autoresponse entries, sticky messages, and related configuration.</li>
         <li>Server-specific settings, welcome-message configurations, and other feature preferences.</li>
+        <li>AFK records: Server ID, User ID, nickname, the AFK reason you provide, and the time you went AFK.</li>
         <li>Records needed to provide, maintain, or troubleshoot enabled features.</li>
       </ul>
       <h3>2.4 Temporary processing information</h3>
       <p>Hosina may temporarily process message content, command inputs, and interaction data in memory or through services needed to execute a requested feature. Temporary processing does not necessarily mean that the information is saved in a persistent database.</p>
+      <h3>2.5 Discord privileged intents</h3>
+      <p>Hosina uses the following Discord privileged gateway intents, only for the purposes described here:</p>
+      <ul>
+        <li><strong>Server Members Intent:</strong> to send welcome messages when a new member joins (using the member's display name, avatar, and the server member count), and to read and temporarily change a member's server nickname for the AFK feature (a temporary “[AFK]” prefix that is removed when the member returns).</li>
+        <li><strong>Message Content Intent:</strong> to read commands that start with the prefix “h.”, to match messages against autoresponse triggers configured by server administrators, to detect when an AFK member is mentioned or becomes active again, to read answers in games, and to read the input typed in feature-specific channels.</li>
+      </ul>
+      <p>Hosina does not use these intents to build user profiles, to track users across servers, or to train machine learning or artificial intelligence models.</p>
 
       <h2>3. How we use information</h2>
       <p>We may use the information described above to:</p>
@@ -70,28 +81,29 @@
         <li>Identify users and servers interacting with Hosina.</li>
         <li>Check server access and Beta Testing eligibility.</li>
         <li>Process commands and provide requested bot features.</li>
-        <li>Maintain user registration, autoresponses, and server configurations.</li>
+        <li>Maintain user registration, autoresponses, AFK status, and server configurations.</li>
         <li>Provide games, image-related features, welcome messages, and moderation utilities.</li>
         <li>Maintain, secure, troubleshoot, and improve the application.</li>
         <li>Detect abuse, spam, unauthorized access, or attempts to disrupt the service.</li>
       </ul>
+      <p>We do not use message content or member information to train machine learning or artificial intelligence models.</p>
 
       <h2>4. Storage and retention</h2>
       <h3>4.1 Persistent storage</h3>
-      <p>Information required for ongoing features may be stored in Hosina's database or configuration storage. This may include Discord User IDs, Server IDs, registration records, message or text content saved as part of a feature (such as custom autoresponse entries), and feature settings.</p>
+      <p>Information required for ongoing features may be stored in Hosina's database or configuration storage. This may include Discord User IDs, Server IDs, usernames, display names, nicknames, avatar URLs, registration records, AFK records, message or text content saved as part of a feature (such as custom autoresponse entries, sticky messages, and AFK reasons), and feature settings.</p>
       <h3>4.2 Temporary processing</h3>
-      <p>Other message content and command inputs may be used only while a command or interaction is being processed. Such information is not necessarily retained as a permanent database record.</p>
+      <p>Other message content and command inputs may be used only while a command or interaction is being processed. Such information is not retained as a permanent database record.</p>
       <h3>4.3 Retention period</h3>
-      <p>Persistent information is intended to be kept only for as long as reasonably necessary to provide the relevant feature, operate and secure Hosina, resolve disputes, or meet legal obligations. The actual retention period may vary by data type and feature.</p>
+      <p>Persistent information is intended to be kept only for as long as reasonably necessary to provide the relevant feature, operate and secure Hosina, resolve disputes, or meet legal obligations. The actual retention period may vary by data type and feature. Stored information is kept on infrastructure operated by the developer and is not sold or shared for advertising.</p>
       <h3>4.4 Deletion and backups</h3>
-      <p>You may request deletion of information associated with your account. After a request is received and reasonably verified, we will review and delete information that we can identify and are not legally required to retain, within a reasonable period. Copies may remain temporarily in backups until those backups are overwritten or expire.</p>
+      <p>You may request deletion of information associated with your account. After a request is received and reasonably verified, we will review and delete information that we can identify and are not legally required to retain, within a reasonable period. Copies may remain temporarily in backups until those backups are overwritten or expire. Server administrators may also remove their server's autoresponse and sticky-message entries using the relevant commands, or remove Hosina from their server at any time.</p>
 
       <h2>5. Sharing and third-party services</h2>
       <p>We do not sell personal information. Information may be processed by third parties only as reasonably necessary to operate requested features or comply with legal obligations. These parties may include:</p>
       <ul>
         <li><strong>Discord:</strong> the platform and API through which users interact with Hosina.</li>
         <li><strong>Hosting or database providers:</strong> if used to host the application or store its data.</li>
-        <li><strong>External APIs or service providers:</strong> where a particular feature requires them to process an input or generate an output.</li>
+        <li><strong>External APIs or service providers:</strong> where a particular feature requires them to process an input or generate an output. For example, a feature-specific channel may send the text you type in that channel (such as a game ID) to a third-party lookup service to return a result. This applies only to that feature and only to messages sent in its channel.</li>
         <li><strong>Legal or regulatory authorities:</strong> when disclosure is required by applicable law or valid legal process.</li>
       </ul>
       <p>Third-party services have their own terms and privacy policies. Their handling of information is governed by those policies and their applicable agreements.</p>
